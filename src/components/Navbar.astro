@@ -1,0 +1,47 @@
+<nav
+  class="xl:flex border-b-black border-b-[1px] bg-white w-screen h-16 hidden fixed top-0 items-center justify-between px-4"
+>
+  <p>Fran</p>
+  <div
+    class="rounded-full bg-gray-200 border-[1px] border-black w-16 h-6 flex items-center hover:cursor-pointer"
+    id="theme"
+  >
+    <div
+      id="light"
+      class="rounded-full h-5 w-1/2 p-2 flex items-center justify-center"
+    >
+      <img src="./lightMode.svg" class="w-6 h-6" />
+    </div>
+    <div
+      id="dark"
+      class="rounded-full h-5 w-1/2 p-2 flex items-center justify-center"
+    >
+      <img src="./darkMode.svg" class="w-6 h-6" />
+    </div>
+  </div>
+</nav>
+
+<script>
+  const themeButton = document.getElementById('theme');
+  const lightBtn = document.getElementById('light');
+  const darkBtn = document.getElementById('dark');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    localStorage.getItem('theme') === 'dark'
+      ? darkBtn.classList.add('bg-white')
+      : lightBtn.classList.add('bg-white');
+    themeButton.addEventListener('click', () => {
+      console.log('clck');
+      localStorage.getItem('theme') === 'dark'
+        ? localStorage.setItem('theme', 'light')
+        : localStorage.setItem('theme', 'dark');
+      if (localStorage.getItem('theme') === 'dark') {
+        darkBtn.classList.add('bg-white');
+        lightBtn.classList.remove('bg-white');
+      } else {
+        darkBtn.classList.remove('bg-white');
+        lightBtn.classList.add('bg-white');
+      }
+    });
+  });
+</script>
