@@ -1,0 +1,116 @@
+---
+import Badges from './Badges.astro';
+import UnderConstructionCard from './UnderConstructionCard.astro';
+---
+
+<div
+  class="flex flex-col items-center justify-center xl:w-3/4 w-full px-3 xl:px-0 h-full text-center xl:text-start"
+>
+  <div class="flex items-center justify-center w-full">
+    <div class="w-1/2">
+      <h2 class="font-bold text-[30px]">Proyectos</h2>
+    </div>
+    <div class="w-80 hidden xl:flex"></div>
+  </div>
+  <div
+    class="flex flex-col xl:flex-row items-center justify-center xl:px-0 gap-y-6 xl:gap-y-0 mt-4 xl:mt-0"
+  >
+    <div class="w-80 flex xl:hidden items-center justify-center">
+      <div
+        id="as-image"
+        class="rounded-md h-60 w-72 flex items-center justify-center"
+      >
+        <img
+          src="/asImage2.png"
+          class="w-72 h-48 rounded-md"
+          alt="armari-solucio"
+        />
+      </div>
+    </div>
+    <div class="xl:w-1/2 w-full flex flex-col items-center xl:items-end">
+      <p>
+        <span class="font-bold">Armari Solució</span> Empresa que se dedica a la
+        creación de landing, al posicionamiento web (SEO) y al marketing digital
+        a través de campañas en redes sociales. Mis funciones comprendían desde la
+        creación de los <span class="font-bold">diseños</span> de las landing web
+        hasta el
+        <span class="font-bold"> desarrollo en Wordpress</span> de las mismas.
+      </p>
+      <a
+        href="https://armari-solucio.vercel.app/"
+        class="w-36 rounded-md mt-4 p-3 h-14 flex items-center justify-center border-black border-2 hover:cursor-pointer xl:mr-6 hover-text text-center"
+        target="_blank"
+      >
+        Visita la página
+      </a>
+    </div>
+    <div class="w-80 hidden xl:flex items-center justify-center">
+      <div
+        id="as-image"
+        class="rounded-md h-60 w-72 flex items-center justify-center"
+      >
+        <img
+          src="/asImage2.png"
+          class="w-72 h-48 rounded-md"
+          alt="armari-solucio"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex items-center flex-col xl:flex-row justify-center xl:px-0 gap-y-6 xl:gap-y-0 mt-4 xl:mt-0"
+  >
+    <div class="w-80 flex items-center justify-center">
+      <div
+        id="as-image"
+        class="rounded-md h-60 w-72 flex items-center justify-center"
+      >
+        <img
+          src="/Martinas.png"
+          class="w-80 h-40 rounded-md"
+          alt="armari-solucio"
+        />
+      </div>
+    </div>
+    <div class="xl:w-1/2 w-full flex flex-col items-center xl:items-start">
+      <p>
+        <span class="font-bold">Martina Figueras' Porfolio</span> Portafolio personal
+        desarrollado en Astro. Martina es una diseñadora gráfica que ha trabajado
+        en distintos proyectos a lo largo de su carrera.
+      </p>
+      <div class="flex items-center justify-center flex-row gap-4">
+        <a
+          href="https://martinafigueras.com"
+          class="w-36 rounded-md mt-4 p-3 h-14 flex items-center justify-center border-black border-2 hover:cursor-pointer hover-text text-center"
+          target="_blank"
+        >
+          Visita la página
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const hoverText = document.querySelectorAll('.hover-text');
+
+  hoverText.forEach((item, index) => {
+    item.addEventListener('mouseover', () => {
+      hoverText.forEach((i, index) => {
+        if (i === item) {
+          i.classList.add('bg-blue-400');
+          i.innerHTML = '¡IR!';
+        }
+      });
+    });
+
+    item.addEventListener('mouseout', () => {
+      hoverText.forEach((i, index) => {
+        if (i === item) {
+          i.classList.remove('bg-blue-400');
+          i.innerHTML = 'Visita la página';
+        }
+      });
+    });
+  });
+</script>

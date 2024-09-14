@@ -3,11 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Greetings from '../components/Greetings.astro';
 import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="flex flex-col max:w-screen h-full items-center mt-16 gap-8">
+<Layout title="Fran Benages">
+  <main
+    class="flex flex-col max:w-screen h-full items-center lg:mt-16 gap-8 mb-12"
+    id="indexInit"
+  >
     <Greetings />
     <Experience />
+    <Projects />
+    <Contact />
   </main>
 </Layout>
