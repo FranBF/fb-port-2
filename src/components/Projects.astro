@@ -38,7 +38,7 @@ import UnderConstructionCard from './UnderConstructionCard.astro';
       </p>
       <a
         href="https://armari-solucio.vercel.app/"
-        class="w-36 rounded-md mt-4 p-3 h-14 flex items-center justify-center border-black border-2 hover:cursor-pointer xl:mr-6 hover-text text-center"
+        class="w-36 rounded-md mt-4 p-3 h-14 flex items-center justify-center hover:bg-gray-200 border-black border-2 hover:cursor-pointer xl:mr-6 hover-text text-center"
         target="_blank"
       >
         Visita la página
@@ -47,13 +47,22 @@ import UnderConstructionCard from './UnderConstructionCard.astro';
     <div class="w-80 hidden xl:flex items-center justify-center">
       <div
         id="as-image"
-        class="rounded-md h-60 w-72 flex items-center justify-center"
+        class="rounded-md h-60 w-72 flex items-center justify-center hover:cursor-pointer"
       >
         <img
           src="/asImage2.png"
           class="w-72 h-48 rounded-md"
           alt="armari-solucio"
+          id="asImg"
         />
+        <div
+          class="hidden w-80 h-40 rounded-md bg-gray-200 items-center justify-center"
+          id="asBadges"
+        >
+          <Badges badgeName="astro" />
+          <Badges badgeName="tailwind" />
+          <Badges badgeName="react" />
+        </div>
       </div>
     </div>
   </div>
@@ -63,13 +72,22 @@ import UnderConstructionCard from './UnderConstructionCard.astro';
     <div class="w-80 flex items-center justify-center">
       <div
         id="as-image"
-        class="rounded-md h-60 w-72 flex items-center justify-center"
+        class="rounded-md h-60 w-72 flex items-center justify-center hover:cursor-pointer"
       >
         <img
           src="/Martinas.png"
           class="w-80 h-40 rounded-md"
           alt="armari-solucio"
+          id="martinaImg"
         />
+        <div
+          class="hidden w-80 h-40 rounded-md bg-gray-200 items-center justify-center"
+          id="martinaBadges"
+        >
+          <Badges badgeName="astro" />
+          <Badges badgeName="tailwind" />
+          <Badges badgeName="react" />
+        </div>
       </div>
     </div>
     <div class="xl:w-1/2 w-full flex flex-col items-center xl:items-start">
@@ -81,7 +99,7 @@ import UnderConstructionCard from './UnderConstructionCard.astro';
       <div class="flex items-center justify-center flex-row gap-4">
         <a
           href="https://martinafigueras.com"
-          class="w-36 rounded-md mt-4 p-3 h-14 flex items-center justify-center border-black border-2 hover:cursor-pointer hover-text text-center"
+          class="w-36 rounded-md mt-4 p-3 h-14 flex items-center justify-center border-black border-2 hover:cursor-pointer hover:bg-gray-200 hover-text text-center"
           target="_blank"
         >
           Visita la página
@@ -93,8 +111,38 @@ import UnderConstructionCard from './UnderConstructionCard.astro';
 
 <script>
   const hoverText = document.querySelectorAll('.hover-text');
+  const martinaImg = document.getElementById('martinaImg');
+  const martinaBadges = document.getElementById('martinaBadges');
+  const asImg = document.getElementById('asImg');
+  const asBadges = document.getElementById('asBadges');
 
-  hoverText.forEach((item, index) => {
+  martinaImg.addEventListener('mouseover', () => {
+    martinaImg.classList.add('hidden');
+    martinaBadges.classList.remove('hidden');
+    martinaBadges.classList.add('flex');
+  });
+
+  martinaImg.addEventListener('mouseout', () => {
+    martinaImg.classList.add('block');
+    martinaImg.classList.remove('hidden');
+    martinaBadges.classList.add('hidden');
+    martinaBadges.classList.remove('flex');
+  });
+
+  asImg.addEventListener('mouseover', () => {
+    asImg.classList.add('hidden');
+    asBadges.classList.remove('hidden');
+    asBadges.classList.add('flex');
+  });
+
+  asImg.addEventListener('mouseout', () => {
+    asImg.classList.add('block');
+    asImg.classList.remove('hidden');
+    asBadges.classList.add('hidden');
+    asBadges.classList.remove('flex');
+  });
+
+  /* hoverText.forEach((item, index) => {
     item.addEventListener('mouseover', () => {
       hoverText.forEach((i, index) => {
         if (i === item) {
@@ -112,5 +160,5 @@ import UnderConstructionCard from './UnderConstructionCard.astro';
         }
       });
     });
-  });
+  }); */
 </script>
